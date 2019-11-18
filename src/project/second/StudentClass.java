@@ -1,4 +1,6 @@
-package project.first;
+package project.second;
+
+import project.second.Student;
 
 import java.util.ArrayList;
 

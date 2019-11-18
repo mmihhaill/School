@@ -1,4 +1,4 @@
-package project.first;
+package project.second;
 
 import javax.swing.*;
 import java.io.File;
@@ -31,7 +31,8 @@ public class ReadFile {
     }
     void schoolMenu() {
         System.out.println("\n1. Вывести классы определенной школы - Введите 1");
-        System.out.println("2. Выйти - Введите 2\n");
+        System.out.println("2. В главное меню - Введите 2");
+        System.out.println("3. Выйти - Введите 3\n");
         System.out.print("Поле для ввода: ");
 
         switch (in.nextByte()) {
@@ -39,13 +40,18 @@ public class ReadFile {
                 showClasses();
                 break;
             case 2:
+                mainMenu();
+                break;
+            case 3:
                 System.exit(0);
                 break;
         }
     }
     void classMenu() {
         System.out.println("\n1. Вывести учеников определенного класса - Введите 1");
-        System.out.println("2. Выйти - Введите 2\n");
+        System.out.println("2. Назад - Введите 2");
+        System.out.println("3. В главное меню - Введите 3");
+        System.out.println("4. Выйти - Введите 4\n");
         System.out.print("Поле для ввода: ");
 
         switch (in.nextByte()) {
@@ -53,12 +59,18 @@ public class ReadFile {
                 showStudent();
                 break;
             case 2:
+                schoolMenu();
+                break;
+            case 3:
+                mainMenu();
+                break;
+            case 4:
                 System.exit(0);
                 break;
         }
     }
     void studentMenu() {
-        System.out.println("\n1. Вернуться в начало - Введите 1");
+        System.out.println("\n1. В главное меню - Введите 1");
         System.out.println("2. Выйти - Введите 2\n");
         System.out.print("Поле для ввода: ");
 

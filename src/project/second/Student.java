@@ -1,4 +1,4 @@
-package project.first;
+package project.second;
 
 public class Student {
     private String fioStudent;
