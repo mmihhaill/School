@@ -39,15 +39,18 @@ public class StudentClass {
         this.classCurator = classCurator;
     }
 
-    public void setStudents(Student student) {
-        listStudents.add(student);
+    public void setStudents(String name) {
+        listStudents.add(new Student(name));
     }
 
     @Override
     public String toString() {
-        for (Student student : listStudents) {
-            System.out.println(student.toString());
+
+        return classNumber + "-" + classLetter + " Куратор: " + classCurator;
+    }
+    public void showStudent() {
+        for(Student student : listStudents){
+            System.out.println(listStudents.indexOf(student) + ": " + student.toString());
         }
-        return String.valueOf(classNumber) + classLetter;
     }
 }

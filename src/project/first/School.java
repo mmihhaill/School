@@ -7,6 +7,9 @@ public class School {
 
     private ArrayList<StudentClass> listStudentsClass = new ArrayList<StudentClass>();
 
+    public School() {
+    }
+
     public School(String schoolName) {
         this.schoolName = schoolName;
     }
@@ -19,13 +22,22 @@ public class School {
         this.schoolName = schoolName;
     }
 
-    public String[] separationCLass(String nameClass) {
-        return nameClass.split("_");
+    public void setStudentsClass(String classLetter, String classCurator, int classNumber) {
+        listStudentsClass.add(new StudentClass(classNumber, classLetter, classCurator));
     }
 
-    public void setStudentsClass(StudentClass studentClass) {
-        listStudentsClass.add(studentClass);
+    public ArrayList<StudentClass> getListStudentsClass() {
+        return listStudentsClass;
     }
 
+    public void setListStudentsClass(ArrayList<StudentClass> listStudentsClass) {
+        this.listStudentsClass = listStudentsClass;
+    }
+
+    public void showClasses() {
+        for(StudentClass studentClass : listStudentsClass){
+            System.out.println("Класс " + listStudentsClass.indexOf(studentClass) + ": " + studentClass.toString());
+        }
+    }
 
 }
