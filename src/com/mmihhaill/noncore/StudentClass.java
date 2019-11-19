@@ -1,6 +1,4 @@
-package project.second;
-
-import project.second.Student;
+package com.mmihhaill.noncore;
 
 import java.util.ArrayList;
 

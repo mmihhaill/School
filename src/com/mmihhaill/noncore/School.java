@@ -1,4 +1,4 @@
-package project.second;
+package com.mmihhaill.noncore;
 
 import java.util.ArrayList;;
 
@@ -7,8 +7,6 @@ public class School {
 
     private ArrayList<StudentClass> listStudentsClass = new ArrayList<StudentClass>();
 
-    public School() {
-    }
 
     public School(String schoolName) {
         this.schoolName = schoolName;

@@ -1,21 +1,28 @@
-package project.second;
+package com.mmihhaill.noncore;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ReadFile {
+    private String nameArgumentFile;
+
     private Scanner scanFile;
     private ArrayList<String> listClass = new ArrayList<String>();
     private ArrayList<String> listCurator = new ArrayList<String>();
     private ArrayList<School> listObjectsSchool = new ArrayList<School>();
-    private JFileChooser fileopen = new JFileChooser("resources");
+    //private JFileChooser fileopen = new JFileChooser("resources");
     private Scanner in = new Scanner(System.in);
     private int numberCheckSchool;
 
+    public ReadFile(String nameArgumentFile) {
+        this.nameArgumentFile = nameArgumentFile;
+    }
+
     public void mainMenu() {
+        dataLoading();
+        /*
         System.out.println("1. Выбрать файл - Введите 1");
         System.out.println("2. Выйти - Введите 2\n");
         System.out.print("Поле для ввода: ");
@@ -27,12 +34,12 @@ public class ReadFile {
             case 2:
                 System.exit(0);
                 break;
-        }
+        }*/
     }
-    void schoolMenu() {
+    private void schoolMenu() {
         System.out.println("\n1. Вывести классы определенной школы - Введите 1");
-        System.out.println("2. В главное меню - Введите 2");
-        System.out.println("3. Выйти - Введите 3\n");
+        //System.out.println("2. В главное меню - Введите 2");
+        System.out.println("2. Выйти - Введите 2\n");
         System.out.print("Поле для ввода: ");
 
         switch (in.nextByte()) {
@@ -40,18 +47,15 @@ public class ReadFile {
                 showClasses();
                 break;
             case 2:
-                mainMenu();
-                break;
-            case 3:
                 System.exit(0);
                 break;
         }
     }
-    void classMenu() {
+    private void classMenu() {
         System.out.println("\n1. Вывести учеников определенного класса - Введите 1");
         System.out.println("2. Назад - Введите 2");
-        System.out.println("3. В главное меню - Введите 3");
-        System.out.println("4. Выйти - Введите 4\n");
+        //System.out.println("3. В главное меню - Введите 3");
+        System.out.println("3. Выйти - Введите 3\n");
         System.out.print("Поле для ввода: ");
 
         switch (in.nextByte()) {
@@ -59,17 +63,14 @@ public class ReadFile {
                 showStudent();
                 break;
             case 2:
-                schoolMenu();
-                break;
-            case 3:
                 mainMenu();
                 break;
-            case 4:
+            case 3:
                 System.exit(0);
                 break;
         }
     }
-    void studentMenu() {
+    private void studentMenu() {
         System.out.println("\n1. В главное меню - Введите 1");
         System.out.println("2. Выйти - Введите 2\n");
         System.out.print("Поле для ввода: ");
@@ -84,37 +85,36 @@ public class ReadFile {
         }
     }
     //methods for withdrawing schools, classes, students
-    void showSchools(){
+    private void showSchools(){
         System.out.println("Список школ:");
         for(School school : listObjectsSchool){
             System.out.println("Школа " + listObjectsSchool.indexOf(school) + ": " + school.getSchoolName());
         }
         schoolMenu();
     }
-    void showClasses(){
+    private void showClasses(){
         System.out.print("Введите порядковый номер школы: ");
         numberCheckSchool = in.nextInt();
         listObjectsSchool.get(numberCheckSchool).showClasses();
         classMenu();
     }
-    void showStudent(){
+    private void showStudent(){
         System.out.print("Введите порядковый номер класса: ");
         listObjectsSchool.get(numberCheckSchool).getListStudentsClass().get(in.nextInt()).showStudent();
         studentMenu();
     }
-    void clearAllList(){
+    private void clearAllList(){
         listClass.clear();
         listObjectsSchool.clear();
         listCurator.clear();
     }
     //loading information from a file
-    void dataLoading() {
+    private void dataLoading() {
         clearAllList();
-        int ret = fileopen.showDialog(null, "Открыть файл");
-        if (ret == JFileChooser.APPROVE_OPTION) {
-            File informationFile = fileopen.getSelectedFile();
+        File fileSchool = new File("resources", nameArgumentFile +".txt");
+        if(fileSchool.isFile()){
             try {
-                scanFile = new Scanner(informationFile);
+                scanFile = new Scanner(fileSchool);
             } catch (FileNotFoundException e) {
                 System.out.println(e);
             }
@@ -147,6 +147,15 @@ public class ReadFile {
                     }
                 }
             }
+            showSchools();
         }
+        else{
+            System.out.println("такого файла не существует");
+        }
+        /*int ret = fileopen.showDialog(null, "Открыть файл");
+        if (ret == JFileChooser.APPROVE_OPTION) {
+            File informationFile = fileopen.getSelectedFile();
+
+        }*/
     }
 }

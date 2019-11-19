@@ -1,4 +1,4 @@
-package project.second;
+package com.mmihhaill.noncore;
 
 public class Student {
     private String fioStudent;
