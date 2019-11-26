@@ -1,4 +1,4 @@
-package com.mmihhaill.noncore;
+package com.mmihhaill.schools;
 
 import java.util.ArrayList;;
 

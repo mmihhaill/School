@@ -1,4 +1,4 @@
-package com.mmihhaill.noncore;
+package com.mmihhaill.schools;
 
 public class Student {
     private String fioStudent;

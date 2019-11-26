@@ -1,0 +1,135 @@
+{
+  "listObjectsSchool": [
+    {
+      "schoolName": "12",
+      "listStudentsClass": [
+        {
+          "classNumber": 8,
+          "classLetter": "А",
+          "classCurator": "Кураткова Мария Петровна",
+          "listStudents": [
+            {
+              "fioStudent": "Печиков Влентин Сергеевич"
+            },
+            {
+              "fioStudent": "Цвирко Ангелина Никитична"
+            }
+          ]
+        },
+        {
+          "classNumber": 8,
+          "classLetter": "Б",
+          "classCurator": "Кураткова Мария Петровна",
+          "listStudents": [
+            {
+              "fioStudent": "Варцов Геннадий Ильич"
+            },
+            {
+              "fioStudent": "Маркевич Денис Сергеевич"
+            }
+          ]
+        },
+        {
+          "classNumber": 9,
+          "classLetter": "А",
+          "classCurator": "Жукова Анна Павловна",
+          "listStudents": [
+            {
+              "fioStudent": "Брус Ангелина Борисовна"
+            },
+            {
+              "fioStudent": "Пророк Вероника Евгеньевна"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schoolName": "4",
+      "listStudentsClass": [
+        {
+          "classNumber": 8,
+          "classLetter": "А",
+          "classCurator": "Васильева Наталья Ивановна",
+          "listStudents": [
+            {
+              "fioStudent": "Цвирко Ангелина Никитична"
+            },
+            {
+              "fioStudent": "Зубец Яна Кирилловна"
+            }
+          ]
+        },
+        {
+          "classNumber": 8,
+          "classLetter": "Б",
+          "classCurator": "Васильева Наталья Ивановна",
+          "listStudents": [
+            {
+              "fioStudent": "Маркевич Денис Сергеевич"
+            },
+            {
+              "fioStudent": "Пацукевич Михаил Геннадьевич"
+            }
+          ]
+        },
+        {
+          "classNumber": 9,
+          "classLetter": "А",
+          "classCurator": "Тричевцова Валентина Николаевна",
+          "listStudents": [
+            {
+              "fioStudent": "Пророк Вероника Евгеньевна"
+            },
+            {
+              "fioStudent": "Тарасевич Владислав Алексеевич"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schoolName": "10",
+      "listStudentsClass": [
+        {
+          "classNumber": 8,
+          "classLetter": "А",
+          "classCurator": "Петрик Елена Михайловна",
+          "listStudents": [
+            {
+              "fioStudent": "Зубец Яна Кирилловна"
+            },
+            {
+              "fioStudent": "Печиков Влентин Сергеевич"
+            }
+          ]
+        },
+        {
+          "classNumber": 8,
+          "classLetter": "Б",
+          "classCurator": "Петрик Елена Михайловна",
+          "listStudents": [
+            {
+              "fioStudent": "Пацукевич Михаил Геннадьевич"
+            },
+            {
+              "fioStudent": "Варцов Геннадий Ильич"
+            }
+          ]
+        },
+        {
+          "classNumber": 9,
+          "classLetter": "А",
+          "classCurator": "Зуль Надежда Денисовна",
+          "listStudents": [
+            {
+              "fioStudent": "Тарасевич Владислав Алексеевич"
+            },
+            {
+              "fioStudent": "Брус Ангелина Борисовна"
+            }
+          ]
+        }
+      ]
+    }
+  ]}

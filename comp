@@ -1,4 +1,0 @@
-javac -d . src/com/mmihhaill/core/*.java src/com/mmihhaill/noncore/*.java
-
-
-jar cfm Prog2.jar MANIFEST.MF com/mmihhaill/core/*.class com/mmihhaill/noncore/*.class
