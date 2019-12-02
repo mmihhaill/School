@@ -11,10 +11,6 @@ public class Student {
         return fioStudent;
     }
 
-    public void setFioStudent(String fioStudent) {
-        this.fioStudent = fioStudent;
-    }
-
     @Override
     public String toString() {
         return "ФИО = " + fioStudent;

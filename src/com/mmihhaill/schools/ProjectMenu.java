@@ -1,28 +1,34 @@
 package com.mmihhaill.schools;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ProjectMenu {
-    private ArrayList<School> listObjectsSchool = new ArrayList<School>();
+    private List<School> listObjectsSchool = new ArrayList<School>();
+
     private Scanner in;
-    private int numberCheckSchool;
+    private int numberCheckSchool, numberCheckClass;
 
     private void schoolMenu() {
         in = new Scanner(System.in);
-        System.out.println("\n1. Вывести классы определенной школы - Введите 1");
-        System.out.println("2. Выйти - Введите 2\n");
-        System.out.print("Поле для ввода: ");
+        System.out.println("\n1. Вывести классы определенной школы");
+        System.out.println("2. Выйти\n");
+        System.out.print("--> ");
         try {
             switch (in.nextByte()) {
-                case 1:
+                case 1: {
                     showClasses();
                     break;
-                case 2:
+                }
+                case 2: {
                     System.exit(0);
                     break;
-                default:
+                }
+                default: {
                     schoolMenu();
+                }
             }
         } catch (Exception e) {
             schoolMenu();
@@ -31,23 +37,27 @@ public class ProjectMenu {
 
     private void classMenu() {
         in = new Scanner(System.in);
-        System.out.println("\n1. Вывести учеников определенного класса - Введите 1");
-        System.out.println("2. Назад - Введите 2");
-        System.out.println("3. Выйти - Введите 3\n");
-        System.out.print("Поле для ввода: ");
+        System.out.println("\n1. Вывести учеников определенного класса");
+        System.out.println("2. Назад");
+        System.out.println("3. Выйти\n");
+        System.out.print("--> ");
         try {
             switch (in.nextByte()) {
-                case 1:
+                case 1: {
                     showStudent();
                     break;
-                case 2:
+                }
+                case 2: {
                     showSchools();
                     break;
-                case 3:
+                }
+                case 3: {
                     System.exit(0);
                     break;
-                default:
+                }
+                default: {
                     classMenu();
+                }
             }
         } catch (Exception e) {
             classMenu();
@@ -56,19 +66,27 @@ public class ProjectMenu {
 
     private void studentMenu() {
         in = new Scanner(System.in);
-        System.out.println("\n1. В главное меню - Введите 1");
-        System.out.println("2. Выйти - Введите 2\n");
-        System.out.print("Поле для ввода: ");
+        System.out.println("\n1. В главное меню");
+        System.out.println("2. Фильтр");
+        System.out.println("3. Выйти\n");
+        System.out.print("--> ");
         try {
             switch (in.nextByte()) {
-                case 1:
+                case 1: {
                     showSchools();
                     break;
-                case 2:
+                }
+                case 2: {
+                    filter();
+                    break;
+                }
+                case 3: {
                     System.exit(0);
                     break;
-                default:
+                }
+                default: {
                     studentMenu();
+                }
             }
         } catch (Exception e) {
             studentMenu();
@@ -86,7 +104,7 @@ public class ProjectMenu {
 
     private void showClasses() {
         in = new Scanner(System.in);
-        System.out.print("Введите порядковый номер школы: ");
+        System.out.print("Порядковый номер школы --> ");
         try {
             numberCheckSchool = in.nextInt();
         } catch (Exception e) {
@@ -98,16 +116,21 @@ public class ProjectMenu {
 
     private void showStudent() {
         in = new Scanner(System.in);
-        System.out.print("Введите порядковый номер класса: ");
+        System.out.print("Порядковый номер класса --> ");
         try {
+            numberCheckClass = in.nextInt();
             listObjectsSchool.get(numberCheckSchool).getListStudentsClass()
-                    .get(in.nextInt()).showStudent();
+                    .get(numberCheckClass).showStudent();
         } catch (Exception e) {
             showStudent();
         }
         studentMenu();
     }
-    private void filterCollections(){
-        listObjectsSchool.stream().filter(line -> line.equals("f")).forEach(System.out::println);
+
+    private void filter() {
+        System.out.print("Параметр фильтрации --> ");
+        listObjectsSchool.get(numberCheckSchool).getListStudentsClass()
+                .get(numberCheckClass).filterCollectionsStudents(in.next());
+    studentMenu();
     }
 }

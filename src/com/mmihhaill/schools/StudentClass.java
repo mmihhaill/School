@@ -1,46 +1,29 @@
 package com.mmihhaill.schools;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentClass {
-    private int classNumber;
+    private String classNumber;
     private String classLetter;
     private String classCurator;
 
-    private ArrayList<Student> listStudents = new ArrayList<Student>();
+    private List<Student> listStudents = new ArrayList<Student>();
+    private List<Student> spareListStudents = new ArrayList<Student>(listStudents);
 
-    public StudentClass(int classNumber, String classLetter, String classCurator) {
+    public StudentClass(String classNumber, String classLetter, String classCurator) {
         this.classNumber = classNumber;
         this.classLetter = classLetter;
         this.classCurator = classCurator;
     }
 
-    public int getClassNumber() {
+    public String getClassNumber() {
         return classNumber;
-    }
-
-    public void setClassNumber(int classNumber) {
-        this.classNumber = classNumber;
     }
 
     public String getClassLetter() {
         return classLetter;
-    }
-
-    public void setClassLetter(String classLetter) {
-        this.classLetter = classLetter;
-    }
-
-    public String getСlassCurator() {
-        return classCurator;
-    }
-
-    public void setСlassCurator(String classCurator) {
-        this.classCurator = classCurator;
-    }
-
-    public void setStudents(String name) {
-        listStudents.add(new Student(name));
     }
 
     @Override
@@ -48,9 +31,19 @@ public class StudentClass {
 
         return classNumber + "-" + classLetter + " Куратор: " + classCurator;
     }
+
     public void showStudent() {
-        for(Student student : listStudents){
+        for (Student student : listStudents) {
             System.out.println(listStudents.indexOf(student) + ": " + student.toString());
+        }
+    }
+
+    void filterCollectionsStudents(String parameter) {
+        spareListStudents = listStudents.stream()
+                .filter(line -> line.getFioStudent().contains(parameter))
+                .collect(Collectors.toList());
+        for (Student student : spareListStudents) {
+            System.out.println(spareListStudents.indexOf(student) + ": " + student.toString());
         }
     }
 }

@@ -27,8 +27,8 @@ public class ReadFile {
                 FileReader reader = new FileReader(fileSchool);
                 JsonParser jsonParser = new JsonParser();
                 JsonObject jsonObject = (JsonObject) jsonParser.parse(reader);
-                ProjectMenu up = GSON.fromJson(jsonObject, ProjectMenu.class);
-                up.showSchools();
+                ProjectMenu projectMenu = GSON.fromJson(jsonObject, ProjectMenu.class);
+                projectMenu.showSchools();
             } catch (FileNotFoundException e) {
                 System.out.println(e);
             }
