@@ -2,7 +2,7 @@ package com.mmihhaill.schools;
 
 public class Main {
     public static void main(String[] args) {
-        /*try {
+        try {
             if(args[0].equals("-nameFile") && !args[1].equals("")){
                 ReadFile readFile = new ReadFile(args[1]);
                 readFile.dataLoading();
@@ -11,10 +11,10 @@ public class Main {
         } catch (ArrayIndexOutOfBoundsException e) {
             errorInArgument();
             System.exit(0);
-        }*/
+        }
 
-        ReadFile readFile = new ReadFile("3");
-        readFile.dataLoading();
+        /*ReadFile readFile = new ReadFile("3");
+        readFile.dataLoading();*/
     }
 
     static void errorInArgument() {
