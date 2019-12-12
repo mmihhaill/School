@@ -10,7 +10,6 @@ public class Main {
             else errorInArgument();
         } catch (ArrayIndexOutOfBoundsException e) {
             errorInArgument();
-            System.exit(0);
         }
 
         /*ReadFile readFile = new ReadFile("3");
